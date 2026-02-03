@@ -1,0 +1,145 @@
+*/
+You and your friend decided to pull off a heist at a heavily guarded bank vault. The vault is protected by a 10-digit passcode, each digit ranging from 0 to 9. However, the configuration is not as simple as just remembering the passcode. The vault's passcode is not straightforward — three wrong digits are randomly placed at three different positions.
+
+Your friend, using some sophisticated tool, has managed to decode the correct digits and their positions. He tells you the exact positions (0-indexed) of the incorrect digits and the number by which the dial must be rotated to correct them.
+
+Your task is to apply these changes and return the final passcode that will successfully open the vault.
+
+Note: After the number 9, the dial wraps around back to 0.
+
+Input Format
+
+Space separated 10-digit vault configuration with 3 wrong digits.
+Three pairs in new line provided, each pair on a new line. Each pair contains:
+The index of the incorrect digit (0-indexed).
+The number by which the dial must be rotated to correct it.
+Constraints
+
+All inputs are digits from 0 to 9
+
+Output Format
+
+Print the final 10-digit space separated passcode with the corrected digits at their respective positions which opens the vault.
+
+Sample Input 0
+
+3 1 4 7 5 4 2 9 5 4
+3 5
+7 4
+1 5
+Sample Output 0
+
+3 6 4 2 5 4 2 3 5 4
+Sample Input 1
+
+9 8 7 6 5 4 3 2 1 0
+0 3
+4 1
+8 2
+Sample Output 1
+
+2 8 7 6 6 4 3 2 3 0
+*/
+
+
+
+
+
+*/ code */
+
+#include <stdio.h>
+
+void money_heist(){
+    int a,b,c,d,e,f,g,h,i,j,ai,bi,ci,di,ei,fi;
+    scanf("%d %d %d %d %d %d %d %d %d %d",&a,&b,&c,&d,&e,&f,&g,&h,&i,&j);
+    scanf("%d %d",&ai,&bi);
+    scanf("%d %d",&ci,&di);
+    scanf("%d %d",&ei,&fi);
+    if(((ai==0)&&(a=a+bi))||((ci==0)&&(a=a+di))||((ei==0)&&(a=a+fi)))
+    {
+        if(a>9)
+        {
+            a=a-10;
+        }
+    }
+    
+    if(((ai==1)&&(b=b+bi))||((ci==1)&&(b=b+bi))||((ei==1)&&(b=b+bi)))
+    {
+        if(b>9)
+        {
+            b=b-10;
+        }
+    }
+    
+    if(((ai==2)&&(c=c+bi))||((ci==2)&&(c=c+di))||((ei==2)&&(c=c+fi)))
+    {
+        if(c>9)
+        {
+            c=c-10;
+        }
+    }
+    
+    if(((ai==3)&&(d=d+bi))||((ci==3)&&(d=d+di))||((ei==3)&&(d=d+fi)))
+    {
+        if(d>9)
+        {
+            d=d-10;
+        }
+    }
+    
+    if(((ai==4)&&(e=e+bi))||((ci==4)&&(e=e+di))||((ei==4)&&(e=e+fi)))
+    {
+        if(e>9)
+        {
+            e=e-10;
+        }
+    }
+    
+    if(((ai==5)&&(f=f+bi))||((ci==5)&&(f=f+di))||((ei==5)&&(f=f+fi)))
+    {
+        if(f>9)
+        {
+            f=f-10;
+        }
+    }
+    
+    if(((ai==6)&&(g=g+bi))||((ci==6)&&(g=g+di))||((ei==6)&&(g=g+fi)))
+    {
+        if(g>9)
+        {
+            g=g-10;
+        }
+    }
+    
+    if(((ai==7)&&(h=h+bi))||((ci==7)&&(h=h+di))||((ei==7)&&(h=h+fi)))
+    {
+        if(h>9)
+        {
+            h=h-10;
+        }
+    }
+    
+    if(((ai==8)&&(i=i+bi))||((ci==8)&&(i=i+di))||((ei==8)&&(i=i+fi)))
+    {
+        if(i>9)
+        {
+            i=i-10;
+        }
+    }
+    
+    if(((ai==9)&&(j=j+bi))||((ci==9)&&(j=j+di))||((ei==9)&&(j=j+fi)))
+    {
+        if(j>9)
+        {
+            j=j-10;
+        }
+    }
+    printf("%d %d %d %d %d %d %d %d %d %d",a,b,c,d,e,f,g,h,i,j);
+}
+    
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    money_heist();
+    return 0;
+}
